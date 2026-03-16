@@ -1,0 +1,28 @@
+filters:
+  and:
+    - categories.contains(link("Clippings"))
+    - '!file.inFolder("Libraries/Templates")'
+formulas:
+  updated: file.mtime.relative()
+properties:
+  source_author:
+    displayName: Author
+  description:
+    displayName: Description
+  tags:
+    displayName: Tags
+  created:
+    displayName: Created
+  formula.updated:
+    displayName: Updated
+views:
+  - type: cards
+    name: Cards
+    order:
+      - file.name
+      - source
+      - source_author
+    sort:
+      - property: created
+        direction: DESC
+    image: note.image

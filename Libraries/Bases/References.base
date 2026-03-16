@@ -1,0 +1,36 @@
+filters:
+  and:
+    - categories.contains(link("References"))
+    - '!file.inFolder("Libraries/Templates")'
+properties:
+  aliases:
+    displayName: Aliases
+  tags:
+    displayName: Tags
+  created:
+    displayName: Created
+  updated:
+    displayName: Updated
+views:
+  - type: table
+    name: Table
+    order:
+      - file.name
+      - rating
+      - aliases
+      - tags
+      - created
+      - updated
+    sort:
+      - property: created
+        direction: DESC
+  - type: cards
+    name: Cards
+    order:
+      - file.name
+      - aliases
+      - tags
+      - created
+    sort:
+      - property: created
+        direction: DESC

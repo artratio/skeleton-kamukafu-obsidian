@@ -1,0 +1,38 @@
+filters:
+  and:
+    - categories.contains(link("Drafts"))
+    - '!file.inFolder("Libraries/Templates")'
+properties:
+  status:
+    displayName: Status
+  tags:
+    displayName: Tags
+  sources:
+    displayName: Sources
+  created:
+    displayName: Created
+  updated:
+    displayName: Updated
+views:
+  - type: table
+    name: Table
+    order:
+      - file.name
+      - status
+      - tags
+      - sources
+      - created
+      - updated
+    sort:
+      - property: created
+        direction: DESC
+  - type: cards
+    name: Cards
+    order:
+      - file.name
+      - status
+      - tags
+      - sources
+    sort:
+      - property: created
+        direction: DESC

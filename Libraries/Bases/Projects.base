@@ -1,0 +1,41 @@
+filters:
+  and:
+    - categories.contains(link("Projects"))
+    - '!file.inFolder("Libraries/Templates")'
+formulas:
+  updated: file.mtime.relative()
+properties:
+  status:
+    displayName: Status
+  tags:
+    displayName: Tags
+  formula.updated:
+    displayName: Updated
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - '!status.contains("completed")'
+    groupBy:
+      property: file.folder
+      direction: ASC
+    order:
+      - file.name
+      - status
+      - file.folder
+      - tags
+      - updated
+    sort:
+      - property: file.mtime
+        direction: DESC
+  - type: cards
+    name: Cards
+    order:
+      - file.name
+      - status
+      - tags
+      - formula.updated
+    sort:
+      - property: file.mtime
+        direction: DESC

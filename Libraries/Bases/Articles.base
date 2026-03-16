@@ -1,0 +1,38 @@
+filters:
+  and:
+    - categories.contains(link("Notes"))
+    - published
+    - '!file.inFolder("Libraries/Templates")'
+formulas:
+  updated: file.mtime.relative()
+properties:
+  tags:
+    displayName: Tags
+  published:
+    displayName: Published
+  created:
+    displayName: Created
+  formula.updated:
+    displayName: Updated
+views:
+  - type: table
+    name: Table
+    order:
+      - file.name
+      - published
+      - tags
+      - formula.updated
+    sort:
+      - property: published
+        direction: DESC
+    columnSize:
+      file.name: 556
+  - type: cards
+    name: Cards
+    order:
+      - file.name
+      - published
+      - tags
+    sort:
+      - property: published
+        direction: DESC

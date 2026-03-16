@@ -1,0 +1,13 @@
+# Obsidian
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.trash/
+
+# Assets (if managed externally)
+# Libraries/Assets
+
+# macOS
+.DS_Store
+
+# iCloud
+*.icloud

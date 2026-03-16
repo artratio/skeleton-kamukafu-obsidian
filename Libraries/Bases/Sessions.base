@@ -1,0 +1,26 @@
+filters:
+  and:
+    - categories.contains(link("Sessions"))
+    - file.folder != "Libraries/Templates"
+formulas:
+  updated: file.mtime.relative()
+properties:
+  summary:
+    displayName: Summary
+  createdAt:
+    displayName: Created
+  updatedAt:
+    displayName: Updated
+  formula.updated:
+    displayName: Updated
+views:
+  - type: table
+    name: Table
+    order:
+      - file.name
+      - createdAt
+      - updatedAt
+      - summary
+    sort:
+      - property: file.mtime
+        direction: DESC

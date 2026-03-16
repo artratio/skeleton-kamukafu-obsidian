@@ -1,0 +1,34 @@
+filters:
+  and:
+    - file.inFolder("Inbox")
+formulas:
+  updated: file.mtime.relative()
+properties:
+  tags:
+    displayName: Tags
+  created:
+    displayName: Created
+  formula.updated:
+    displayName: Updated
+views:
+  - type: table
+    name: Table
+    order:
+      - file.name
+      - tags
+      - created
+      - formula.updated
+    sort:
+      - property: created
+        direction: DESC
+    columnSize:
+      file.name: 553
+  - type: cards
+    name: Cards
+    order:
+      - file.name
+      - tags
+      - formula.updated
+    sort:
+      - property: created
+        direction: DESC

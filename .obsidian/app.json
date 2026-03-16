@@ -1,0 +1,12 @@
+{
+  "newFileLocation": "folder",
+  "newFileFolderPath": "Notes",
+  "attachmentFolderPath": "Libraries/Binaries",
+  "showUnsupportedFiles": true,
+  "alwaysUpdateLinks": true,
+  "promptDelete": false,
+  "showLineNumber": true,
+  "livePreview": true,
+  "trashOption": "local",
+  "propertiesInDocument": "visible"
+}

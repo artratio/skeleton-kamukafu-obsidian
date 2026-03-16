@@ -1,0 +1,35 @@
+filters:
+  and:
+    - categories.contains(link("Daily"))
+    - '!file.inFolder("Libraries/Templates")'
+formulas:
+  day_of_week: date(file.basename).format("ddd")
+  word_estimate: (file.size / 5).round(0)
+properties:
+  formula.day_of_week:
+    displayName: Day
+  formula.word_estimate:
+    displayName: Words
+views:
+  - type: table
+    name: Table
+    order:
+      - file.name
+      - formula.day_of_week
+      - formula.word_estimate
+      - created
+      - updated
+    sort:
+      - property: file.name
+        direction: DESC
+    columnSize:
+      file.name: 173
+  - type: cards
+    name: Cards
+    order:
+      - file.name
+      - formula.day_of_week
+      - formula.word_estimate
+    sort:
+      - property: file.name
+        direction: DESC

@@ -1,0 +1,50 @@
+filters:
+  and:
+    - categories.contains(link("Notes"))
+    - '!file.inFolder("Libraries/Templates")'
+formulas:
+  updated: file.mtime.relative()
+properties:
+  tags:
+    displayName: Tags
+  type:
+    displayName: Type
+  status:
+    displayName: Status
+  created:
+    displayName: Created
+  formula.updated:
+    displayName: Updated
+views:
+  - type: table
+    name: Table
+    order:
+      - file.name
+      - tags
+      - created
+      - author
+      - editor
+    sort:
+      - property: created
+        direction: ASC
+      - property: file.mtime
+        direction: DESC
+  - type: cards
+    name: Cards
+    order:
+      - file.name
+      - type
+      - status
+      - tags
+      - created
+  - type: table
+    name: Active
+    filters:
+      and:
+        - status == "active"
+    order:
+      - file.basename
+      - type
+      - tags
+      - created
+      - formula.updated
