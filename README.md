@@ -134,8 +134,9 @@ cp -r Projects/_Template Projects/MyNewProject
 |---|---|
 | `Product.md` | 最新仕様書。プロジェクトの真実の源泉（Single Source of Truth）。仕様・決定事項・予算・体制を記録する |
 | `Project.md` | プロジェクト概要・ゴール・タスク管理。何をやるか、なぜやるか、どこまで終わったか |
+| `Archives/` | 古くなった資料の退避先。Product.md と Project.md は常に最新を保ち、時系列が古すぎる情報はここに移す |
 
-必要に応じて調査メモや成果物ドラフトを同じフォルダに追加していく。
+必要に応じて調査メモや成果物ドラフトを同じフォルダに追加していく。古い議事録や旧版の仕様など、残しておきたいが Product.md の鮮度に悪影響を与える資料は `Archives/` に退避する。
 
 #### References/ — 人物・概念の参照カード
 
