@@ -11,7 +11,10 @@ A personal knowledge base built on the Evergreen Notes methodology and the Think
 - **Inbox/** — Fleeting notes, unsorted quick captures
 - **Notes/** — Evergreen notes: thoughts digested in your own words. Default folder for new files
 - **Daily/** — Daily journal. Filename format: `YYYY-MM-DD.md`
-- **Projects/** — Project workspaces. Each project has a subfolder with `Product.md` (latest spec) as the core document
+- **Projects/** — Project workspaces. Each project has a subfolder with the following structure:
+  - `Product.md` — Latest spec (Single Source of Truth). Always keep current
+  - `Project.md` — Overview, goals, tasks
+  - `Archives/` — Stale data goes here. Old meeting notes, outdated specs, anything that would hurt the freshness of Product.md
 - **Clippings/** — Articles saved via web clipper
 - **Emails/** — Email archives
 - **References/** — Reference cards for people, books, concepts
